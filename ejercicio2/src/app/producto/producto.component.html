@@ -1,0 +1,8 @@
+<p></p>
+Producto: <input type="string" id="pdct" [(ngModel)]="producto"><br>
+Precio: <input type="number" id="prc" [(ngModel)]="precio"><br>
+
+<input type="button" value="Agregar" (click)="agregarProductos(); limpiarCajas()"/>
+<br> 
+<!--se llaman la vista de lista-productos pasandole a sus componentes los como parametros de producto-->
+<app-lista-productos [productosAMostrar] = "resultArray" (finalizar) = "finalizarEjecutado()"  ></app-lista-productos><br>

@@ -1,0 +1,50 @@
+
+<p *ngIf="userName==='';else loggedOn"></p>
+<ng-template #loggedOn>
+  <p>El usuario Inicio session correctamente....</p>
+</ng-template>
+<div class="op">
+<form >
+  <div class="form-group">
+    <label for="Number1">Numero 1</label>
+    <input type="text" class="form-control" name="numero1" [(ngModel)] = "numero1" (change)="calculate()" >
+  </div>
+  <div class="form-group">
+    <label for="Number2">Numero 2</label>
+    <input type="text" class="form-control" name="numero2" [(ngModel)] = "numero2" (change)="calculate()" >
+  </div>
+
+  <button type="submit" class="btn btn-primary" (click)="calculate()">Submit</button>
+</form>
+</div>
+<br>
+
+<h2 *ngIf="resultado>0">Result:{{resultado |currency}} </h2>
+<br>
+
+
+<div *ngFor="let operacionAritmica of operaciones;index as myIndex" >
+<label for="{{operacionAritmica}}">
+<input type="radio" id="radioOperacion{{myIndex+1}}" name="operacion" (change)="calculate()"
+ value="{{myIndex}}" [(ngModel)] ="operacion">
+{{operacionAritmica}}
+</label>
+  </div>
+<!--
+Sumar <input type="radio" [value]="1" [(ngModel)] ="operacion" (change)="calculate()"  >
+<br>
+
+Restar <input type="radio" [value]="2" [(ngModel)] = "operacion" (change)="calculate()" >
+<br>
+
+Multiplicar <input type="radio" [value]="3" [(ngModel)] = "operacion" (change)="calculate()" >
+<br>
+
+Dividir <input type="radio" [value]="4" [(ngModel)] = "operacion"(change)="calculate()" >  -->
+<!--
+<button type="button" class="btn btn-primary"(click)="calculate()"> Calcular </button> -->
+
+<!-- <button (click)="calculate()"> Calcular </button> -->
+
+<!-- Se manda a llamar el componente de esultados pasandole como parametro el valor de resultado -->
+<app-matematico-result (limpiacajas)="limpiaCajasEjecutado()" [resultadoAMostrar]="resultado"></app-matematico-result>

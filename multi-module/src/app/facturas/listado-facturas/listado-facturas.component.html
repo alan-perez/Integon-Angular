@@ -1,0 +1,7 @@
+<p>Bssca factura</p>
+Id de la factura: <input type="text" id="id">
+<ol>
+  <li *ngFor="let factura of facturas">
+  {{factura.id}} -  {{factura.fecha}} -{{factura.monto}}
+</li>
+</ol>

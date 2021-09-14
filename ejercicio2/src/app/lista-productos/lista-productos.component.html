@@ -1,0 +1,14 @@
+<h4>Lista de productos</h4>
+<table>
+    <thead>
+        <th>Nombre</th>
+        <th>Precio</th>
+    </thead>
+    <tbody>
+    <tr *ngFor = "let producto of productosAMostrar">
+        <td>{{ producto.nombre }}</td>
+        <td>{{ producto.precio }}</td>
+        </tr>
+        <tbody>
+</table>
+<input type = "button" value = "Finalizar" (click) = "finalizar.emit()">

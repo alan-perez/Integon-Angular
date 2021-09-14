@@ -1,0 +1,6 @@
+<p>sidebar works!</p>
+<p [innerText]="dato1"></p>
+<p>Este texto puede o no estar seleccionado</p>
+<p [class.seleccionado]="estaSeleccionado">Este texto puede o no estar seleccionado</p>
+<p [class]="currentClasses">Texto configurado con estilos</p>
+Seleccionado: <input type="checkbox" id="seleccionadoONo" [(ngModel)]="estaSeleccionado" (change)="checkboxChanged()" checked>
